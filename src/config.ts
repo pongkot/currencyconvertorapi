@@ -1,8 +1,8 @@
-import CurrencyConverterController from './controller/CurrencyConverterController';
 import RouterCore from './core/RouterCore';
+import WebhookController from './controller/WebhookController';
 
 const routingConfig: RouterCore[] = [
-  CurrencyConverterController.getInstance(),
+  WebhookController.getInstance(),
 ];
 
 export default routingConfig;
