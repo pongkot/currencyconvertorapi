@@ -24,6 +24,7 @@ module.exports = {
     'import/no-unresolved': 0,
     'import/extensions': 'off',
     'class-methods-use-this': 'off',
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/no-explicit-any": "off",
+    semi: ["error", "never"]
   },
 };
