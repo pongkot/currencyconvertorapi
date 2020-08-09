@@ -26,4 +26,12 @@ export default class FixerService {
       fs.writeFileSync('htdocs/currency_rates.json', JSON.stringify(data))
       return 'success'
     }
+
+    public initCurrencyRate(): void {
+      this.getCurrencyRateDefault().then((r: FixerDefaultModel) => {
+        if (this.saveCurrencyRateToFile(r) === 'success') {
+          process.stdout.write('Initial currency rate success\n')
+        }
+      })
+    }
 }
