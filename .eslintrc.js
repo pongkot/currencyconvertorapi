@@ -25,6 +25,7 @@ module.exports = {
     'import/extensions': 'off',
     'class-methods-use-this': 'off',
     "@typescript-eslint/no-explicit-any": "off",
-    semi: ["error", "never"]
+    semi: ["error", "never"],
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   },
 };

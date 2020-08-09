@@ -20,16 +20,20 @@
     "koa": "2.13.0",
     "koa-body": "4.2.0",
     "koa-logger": "3.2.1",
-    "lodash": "4.17.19"
+    "lodash": "4.17.19",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "rxjs": "6.6.2"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.108",
-    "@types/koa": "2.0.45",
-    "@types/koa-logger": "3.1.0",
-    "@types/koa-bodyparser": "4.2.0",
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-typescript": "^7.10.4",
+    "@types/koa": "2.0.45",
+    "@types/koa-bodyparser": "4.2.0",
+    "@types/koa-logger": "3.1.0",
+    "@types/lodash": "4.14.108",
+    "@types/request-promise": "^4.1.46",
     "@typescript-eslint/eslint-plugin": "^3.8.0",
     "@typescript-eslint/parser": "^3.8.0",
     "babel-jest": "^26.2.2",
@@ -37,7 +41,7 @@
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
     "jest": "26.2.2",
-    "typescript": "^3.9.7",
-    "nodemon": "2.0.4"
+    "nodemon": "2.0.4",
+    "typescript": "^3.9.7"
   }
 }
