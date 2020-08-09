@@ -3,13 +3,21 @@ import * as _ from 'lodash'
 import IFixerAdaptor from '../interfaces/IFixerAdaptor'
 import FixerDefaultModel from '../model/FixerDefaultModel'
 import IFixerSimpleResponse from '../interfaces/IFixerSimpleResponse'
+import { IConfiguration } from '../../common/configuration'
 
 export default class FixerAdaptor implements IFixerAdaptor {
+  private readonly config: IConfiguration
+
+  constructor(config: IConfiguration) {
+    this.config = config
+  }
+
   public getDefaultCurrencyRate(): Promise<FixerDefaultModel> {
+    const { config } = this
     const options = {
-      uri: 'http://data.fixer.io/api/latest',
+      uri: config.fixerUrl,
       qs: {
-        access_key: '3014cc2f4024dbcea8b8a5a8d532de36',
+        access_key: config.fixerAccessKey,
         format: 1,
         symbols: 'USD,THB,CNY,JPY',
       },

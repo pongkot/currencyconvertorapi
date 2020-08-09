@@ -19,10 +19,10 @@ export default class FixerController extends RouterCore {
 
     public initRoute(): Router {
       return fixerRouter
-        .get('/', this.getFixerDefaul)
+        .post('/', this.updateCurrencyRate)
     }
 
-    public async getFixerDefaul(ctx: any): Promise<void> {
+    public async updateCurrencyRate(ctx: any): Promise<void> {
       const { response } = ctx
 
       await fixerAdaptor

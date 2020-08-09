@@ -1,4 +1,5 @@
 import FixerAdaptor from '../domain/fixer/adaptor/FixerAdaptor'
+import { IConfiguration, configuration } from '../domain/common/configuration'
 
 export default class AdaptorProvider {
     private static instance: AdaptorProvider = new AdaptorProvider()
@@ -8,6 +9,7 @@ export default class AdaptorProvider {
     }
 
     public fixerAdaptor(): FixerAdaptor {
-      return new FixerAdaptor()
+      const config: IConfiguration = configuration
+      return new FixerAdaptor(config)
     }
 }
