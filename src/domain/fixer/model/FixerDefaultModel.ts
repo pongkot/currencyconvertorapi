@@ -83,7 +83,7 @@ export default class FixerDefaultModel {
       return this.JPY
     }
 
-    public getbase(): string {
+    public getBase(): string {
       return this.base
     }
 }
