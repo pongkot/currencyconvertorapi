@@ -1,6 +1,8 @@
 import * as Koa from 'koa';
 import * as bodyParser from 'koa-body';
 import * as logger from 'koa-logger';
+import routingConfig from './config';
+import RouterCore from './core/RouterCore';
 
 // Inital koa instance
 const app = new Koa();
@@ -9,7 +11,10 @@ const app = new Koa();
 app.use(bodyParser());
 app.use(logger());
 
-// Automatic inject routing
+// Automatic inject routings from config
+routingConfig.forEach((i: RouterCore) => {
+  app.use(i.initRoute().routes());
+});
 
 // Init default routing
 app.use((ctx: any) => {
