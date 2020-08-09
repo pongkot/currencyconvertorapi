@@ -1,10 +1,7 @@
 import * as Router from '@koa/router'
-import { tap } from 'rxjs/operators'
-import { Observable, async } from 'rxjs'
 import RouterCore from '../core/RouterCore'
 import FixerDefaultModel from '../domain/fixer/model/FixerDefaultModel'
 import IFixerAdaptor from '../domain/fixer/interfaces/IFixerAdaptor'
-import FixerAdaptor from '../domain/fixer/adaptor/FixerAdaptor'
 import AdaptorProvider from '../provider/AdaptorProvider'
 
 const fixerAdaptor: IFixerAdaptor = AdaptorProvider.getInstance().fixerAdaptor()
@@ -25,11 +22,11 @@ export default class FixerController extends RouterCore {
         .get('/', this.getFixerDefaul)
     }
 
-    public async getFixerDefaul(ctx: any): Promise<any> {
+    public async getFixerDefaul(ctx: any): Promise<void> {
       const { response } = ctx
 
-      await fixerAdaptor.getDefaultCurrencyRate().then((r: any): void => { response.body = r })
-
-    //   response.body = 200
+      await fixerAdaptor
+        .getDefaultCurrencyRate()
+        .then((r: FixerDefaultModel): void => { response.body = r })
     }
 }
